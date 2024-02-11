@@ -31,9 +31,7 @@ import Instructor from "./components/core/Dashboard/InstructorDashboard/Instruct
 function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const { user } = useSelector((state) => state.profile);
-
   return (
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
       <Navbar />
@@ -41,7 +39,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="catalog/:catalogName" element={<Catalog />} />
         <Route path="courses/:courseId" element={<CourseDetails />} />
-
         <Route
           path="signup"
           element={
@@ -58,7 +55,6 @@ function App() {
             </OpenRoute>
           }
         />
-
         <Route
           path="forgot-password"
           element={
@@ -67,7 +63,6 @@ function App() {
             </OpenRoute>
           }
         />
-
         <Route
           path="verify-email"
           element={
@@ -76,7 +71,6 @@ function App() {
             </OpenRoute>
           }
         />
-
         <Route
           path="update-password/:id"
           element={
@@ -85,10 +79,8 @@ function App() {
             </OpenRoute>
           }
         />
-
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-
         <Route
           element={
             <PrivateRoute>
@@ -97,9 +89,7 @@ function App() {
           }
         >
           <Route path="dashboard/my-profile" element={<MyProfile />} />
-
           <Route path="dashboard/Settings" element={<Settings />} />
-
           {user?.accountType === ACCOUNT_TYPE.STUDENT && (
             <>
               <Route path="dashboard/cart" element={<Cart />} />
@@ -109,7 +99,6 @@ function App() {
               />
             </>
           )}
-
           {user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
             <>
               <Route path="dashboard/instructor" element={<Instructor />} />
@@ -122,7 +111,6 @@ function App() {
             </>
           )}
         </Route>
-
         <Route
           element={
             <PrivateRoute>
@@ -139,11 +127,9 @@ function App() {
             </>
           )}
         </Route>
-
         <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );
 }
-
 export default App;

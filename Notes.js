@@ -48,3 +48,8 @@ To run backend and frontend simultaenously you need to use the npm concurrent pa
 React Hook form , React Outlet (react router DOM)
 You can also use progress bar of in the installed package of react Ramonak progress bar
 */
+/* 
+Navbar.jsx
+ProfileDropDown.jsx
+
+*/

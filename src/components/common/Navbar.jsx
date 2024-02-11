@@ -3,20 +3,34 @@ import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsChevronDown } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { Link, matchPath, useLocation } from "react-router-dom";
-
 import logo from "../../assets/Logo/Logo-Full-Light.png";
-import { NavbarLinks } from "../../data/navbar-links";
 import { apiConnector } from "../../services/apiconnector";
 import { categories } from "../../services/apis";
-import { ACCOUNT_TYPE } from "../../utils/constants";
 import ProfileDropdown from "../core/Auth/ProfileDropDown";
+
+const NavbarLinks = [
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "Catalog",
+  },
+  {
+    title: "About Us",
+    path: "/about",
+  },
+  {
+    title: "Contact Us",
+    path: "/contact",
+  },
+];
 
 function Navbar() {
   const { token } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.profile);
   const { totalItems } = useSelector((state) => state.cart);
   const location = useLocation();
-
   const [subLinks, setSubLinks] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -27,13 +41,11 @@ function Navbar() {
         const res = await apiConnector("GET", categories.CATEGORIES_API);
         setSubLinks(res.data.data);
       } catch (error) {
-        console.log("Could not fetch Categories.", error);
+        console.log("Could not fetch Categories", error);
       }
       setLoading(false);
     })();
   }, []);
-
-  // console.log("sub links", subLinks)
 
   const matchRoute = (route) => {
     return matchPath({ path: route }, location.pathname);
@@ -114,7 +126,7 @@ function Navbar() {
         </nav>
         {/* Login / Signup / Dashboard */}
         <div className="hidden items-center gap-x-4 md:flex">
-          {user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
+          {user && user?.accountType !== "Instructor" && (
             <Link to="/dashboard/cart" className="relative">
               <AiOutlineShoppingCart className="text-2xl text-richblack-100" />
               {totalItems > 0 && (
