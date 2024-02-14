@@ -86,7 +86,6 @@ function Home() {
             backgroundGradient={<div className="codeblock1 absolute"></div>}
           />
         </div>
-
         {/* Code Section 2 */}
         <div>
           <CodeBlocks
@@ -115,7 +114,6 @@ function Home() {
             backgroundGradient={<div className="codeblock2 absolute"></div>}
           />
         </div>
-
         {/* Explore Section */}
         <ExploreMore />
       </div>
