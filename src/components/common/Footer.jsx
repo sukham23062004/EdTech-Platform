@@ -1,11 +1,7 @@
 import React from "react";
 import { FooterLink2 } from "../../data/footer-links";
 import { Link } from "react-router-dom";
-
-// Images
 import Logo from "../../assets/Logo/Logo-Full-Light.png";
-
-// Icons
 import { FaFacebook, FaGoogle, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const BottomFooter = ["Privacy Policy", "Cookie Policy", "Terms"];
@@ -54,12 +50,10 @@ const Footer = () => {
               </div>
               <div></div>
             </div>
-
             <div className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
               <h1 className="text-richblack-50 font-semibold text-[16px]">
                 Resources
               </h1>
-
               <div className="flex flex-col gap-2 mt-2">
                 {Resources.map((ele, index) => {
                   return (
@@ -74,7 +68,6 @@ const Footer = () => {
                   );
                 })}
               </div>
-
               <h1 className="text-richblack-50 font-semibold text-[16px] mt-7">
                 Support
               </h1>
@@ -82,12 +75,10 @@ const Footer = () => {
                 <Link to={"/help-center"}>Help Center</Link>
               </div>
             </div>
-
             <div className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
               <h1 className="text-richblack-50 font-semibold text-[16px]">
                 Plans
               </h1>
-
               <div className="flex flex-col gap-2 mt-2">
                 {Plans.map((ele, index) => {
                   return (
@@ -105,7 +96,6 @@ const Footer = () => {
               <h1 className="text-richblack-50 font-semibold text-[16px] mt-7">
                 Community
               </h1>
-
               <div className="flex flex-col gap-2 mt-2">
                 {Community.map((ele, index) => {
                   return (
@@ -122,7 +112,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
           {/* Section 2 */}
           <div className="lg:w-[50%] flex flex-wrap flex-row justify-between pl-3 lg:pl-5 gap-3">
             {FooterLink2.map((ele, i) => {
@@ -149,7 +138,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
       <div className="flex flex-row items-center justify-between w-11/12 max-w-maxContent text-richblack-400 mx-auto  pb-14 text-sm">
         {/* Section 1 */}
         <div className="flex justify-between lg:items-start items-center flex-col lg:flex-row gap-3 w-full">
@@ -171,8 +159,9 @@ const Footer = () => {
               );
             })}
           </div>
-
-          <div className="text-center">Made with ❤️ CodeHelp © 2023 Studynotion</div>
+          <div className="text-center">
+            Made with ❤️ CodeHelp © 2023 Studynotion
+          </div>
         </div>
       </div>
     </div>
